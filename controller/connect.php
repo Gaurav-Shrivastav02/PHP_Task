@@ -35,10 +35,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header("location: ../view/welcome.php");
         }
 }
-else{
-    header("location: ../view/Login.php");
-
-}
 }
 
 if (isset($_POST['Login']))
@@ -58,13 +54,36 @@ if (isset($_POST['Login']))
      $_SESSION["Email"] = $res[3];
      $_SESSION["Phn"] = $res[4];
     
-     print_r ($res[1]);
+    //  print_r ($res[1]);
      if($res[0]===$pas){
         header("location: ../view/Profile.php");  
  }
  else{
  echo "Password is wrong";
 }
+}
+
+if( isset($_POST["profile_update"])){
+    $Fn=$_POST['F_name'];
+    $ln=$_POST['L_name'];
+    $em=$_POST['email'];
+    $phn=$_POST['phn'];
+
+    $ins=new model();
+    $res= $ins->update_data($Fn,$ln,$em, $phn);
+    session_start();
+    $_SESSION["Firstname"] = $res[1];
+    $_SESSION["Lastname"] = $res[2];
+    $_SESSION["Email"] = $res[3];
+    $_SESSION["Phn"] = $res[4];
+    if($res=='no'){
+        Echo"Data not Updated";
+        
+    }else{
+        header("location: ../view/Profile.php");
+    }
+  
+
 }
 
 

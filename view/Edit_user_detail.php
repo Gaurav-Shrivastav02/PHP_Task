@@ -10,30 +10,18 @@ session_start();
     <title></title>
 </head>
 <body>
-<form action="" method="post">
+<form action="../controller/connect.php" method="post">
  First Name: <input type="text" name="F_name" value="<?php echo $_SESSION["Firstname"];?>"> <br>
  Last Name: <input type="text" name="L_name" value="<?php echo $_SESSION["Lastname"];?>"> <br>
- Email: <input type="email" name="email" value="<?php echo $_SESSION["Email"];?>"> <br>
+Email: <input type="email" name="email" value="<?php echo $_SESSION["Email"];?>"> <br>
  Phone no: <input type="text" name="phn" value="<?php echo $_SESSION["Phn"];?>"> <br> 
  <!-- Profile Photo: <input type="file" name="pic"> <br> -->
 
- <button type="submit" name="submit">Register</button><br>
+ <button type="submit" name="profile_update">Update</button><br>
  
 </form>
 <?php
-if( isset($_POST["submit"])){
-    $Fn=$_POST['F_name'];
-    $ln=$_POST['L_name'];
-    $em=$_POST['email'];
-    $phn=$_POST['phn'];
 
-    echo "$Fn->";
-    echo "$ln->";
-    echo "$em->";
-    echo "$phn";
-  
-
-}
 
 ?>
     

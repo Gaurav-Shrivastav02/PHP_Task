@@ -19,7 +19,7 @@ session_start();
 
     <button><a href="Edit_user_detail.php" style=" text-decoration:none;">Edit</a></button>
     <button><a href="" style=" text-decoration:none;">Change Password</a></button>
-    <button><a href="" style=" text-decoration:none;">Logout</a></button>
+    <button><a href="logout.php" style=" text-decoration:none;">Logout</a></button>
 
 
 

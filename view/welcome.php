@@ -17,7 +17,7 @@
  <!-- Profile Photo: <input type="file" name="pic"> <br> -->
 
  <button type="submit" name="submit">Register</button><br>
- <button type="submit" name="login">Login</button><br>
+ <button type="submit" ><a href="Login.php" style=" text-decoration:none;color:black;">Login</a></button><br>
 </form>
     
 </body>
