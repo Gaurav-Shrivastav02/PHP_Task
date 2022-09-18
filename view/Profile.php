@@ -8,18 +8,37 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
-    <h1>welcome to the User Profile.</h1>
-    <h1>First Name:- <?php echo $_SESSION["Firstname"];?></h1><br>
-    <h1> Last Name:- <?php echo $_SESSION["Lastname"];?></h1><br>
-    <h1> Email:- <?php echo $_SESSION["Email"] ;?></h1><br>
-    <h1> Phone:- <?php echo $_SESSION["Phn"] ;?></h1><br>
+   
+    <table class="profile">
+    <tr><td colspan="4"><h3>welcome to the User Profile.</h3></td></tr>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td><?php echo $_SESSION["Firstname"];?></td>
+            <td><?php echo $_SESSION["Lastname"];?></td>
+            <td><?php echo $_SESSION["Email"] ;?></td>
+            <td><?php echo $_SESSION["Phn"] ;?></td>
+        </tr>
+        <tr>
+    
+                <td><button><a href="Edit_user_detail.php" style=" text-decoration:none;">Edit</a></button></td>
+                <td colspan="2"><button><a href="change_user_password.php" style=" text-decoration:none;">Change Password</a></button></td>
+                <td><button><a href="logout.php" style=" text-decoration:none;">Logout</a></button></td>
 
-    <button><a href="Edit_user_detail.php" style=" text-decoration:none;">Edit</a></button>
-    <button><a href="" style=" text-decoration:none;">Change Password</a></button>
-    <button><a href="logout.php" style=" text-decoration:none;">Logout</a></button>
+        </tr>
+    </table>
+
+    
+    
+    
 
 
 

@@ -3,6 +3,6 @@ include '.\controller\connect.php';
 
  
 $con=new controller();
-$con-> shailendra();
+$con-> invoke();
 
 ?>
