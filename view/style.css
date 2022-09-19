@@ -1,8 +1,8 @@
-.register,.login {
+.login{
     position:relative;
-    padding:10px 20px;
+    padding:10px 30px;
     width:fit-content;
-    height:300px;
+    height:fit-content;
     top:30%;
     left:35%;
     background-color: aliceblue;

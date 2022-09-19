@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['Email'])){
+    header('location:Login.php');
+}
 ?>
 
 <html lang="en">
@@ -11,21 +14,23 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="../controller/connect.php" method="post" class="login">
+    <div class="login">
+<form action="../controller/connect.php" method="post" >
     <h3 class="rg">Update Data</h3>
  First Name: <input type="text" name="F_name" value="<?php echo $_SESSION["Firstname"];?>"> <br>
  Last Name: <input type="text" name="L_name" value="<?php echo $_SESSION["Lastname"];?>"> <br>
- Email: <input type="email" name="email" value="<?php echo $_SESSION["Email"];?>"> <br>
- Phone no: <input type="text" name="phn" value="<?php echo $_SESSION["Phn"];?>"> <br> 
- <!-- Profile Photo: <input type="file" name="pic"> <br> -->
 
+ Phone no: <input type="text" maxlength="10" name="phn" value="<?php echo $_SESSION["Phn"];?>"> 
  <button type="submit" name="profile_update">Update</button><br>
+ </form>
+ <form action="../controller/connect.php" method="post"enctype="multipart/form-data" >
+ Profile Photo: <input type="file" name="pic">
+ <button type="submit" name="pic_update">Upload</button><br>
+ </form>
+ </div>
  
-</form>
-<?php
 
 
-?>
     
 </body>
 </html>

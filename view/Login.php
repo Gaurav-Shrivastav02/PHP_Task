@@ -11,8 +11,8 @@
 
 <form action="../controller/connect.php" method='post' class="login">
     <h3 class="lg">Login</h3>
- Email: <input type="email" name="email"><br>
- pass: <input type="pass" name="pass"><br>   
+ Email: <input type="email" name="email" required><br>
+ pass: <input type="password" name="pass" required><br>   
  <button type="submit" name="Login">Login</button>
  <button><a href="Register.php" style=" text-decoration:none;">Register</a></button>
 

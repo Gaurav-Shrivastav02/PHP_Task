@@ -2,30 +2,36 @@
 //include '.\controller\connect.php';
 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/TASK/controller/connect.php');
 session_start();
+if(!isset($_SESSION['Email'])){
+    header('location:Login.php');
+}
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
    
     <table class="profile">
-    <tr><td colspan="4"><h3>welcome to the User Profile.</h3></td></tr>
+    <tr><td colspan="5"><h3>welcome to the User Profile.</h3></td></tr>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Profile Pic</th>
         </tr>
         <tr>
             <td><?php echo $_SESSION["Firstname"];?></td>
             <td><?php echo $_SESSION["Lastname"];?></td>
             <td><?php echo $_SESSION["Email"] ;?></td>
             <td><?php echo $_SESSION["Phn"] ;?></td>
+            <td rowspan="2"><img src="<?php echo $_SESSION["img"] ;?>" alt="img" height='100px' width='100px'></td>
+            
         </tr>
         <tr>
     
