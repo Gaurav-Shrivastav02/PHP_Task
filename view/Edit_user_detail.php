@@ -15,18 +15,21 @@ if(!isset($_SESSION['Email'])){
 </head>
 <body>
     <div class="login">
-<form action="../controller/connect.php" method="post" >
+    <form action="../controller/connect.php" method="post"enctype="multipart/form-data" >
     <h3 class="rg">Update Data</h3>
- First Name: <input type="text" name="F_name" value="<?php echo $_SESSION["Firstname"];?>"> <br>
- Last Name: <input type="text" name="L_name" value="<?php echo $_SESSION["Lastname"];?>"> <br>
+    <img src="<?php echo $_SESSION["img"] ;?>" alt="Please upload img" height='80px' width='80px'><br>
+    <input type="file" name="pic" style="margin-left:0px;"> <br>
+    <button type="submit" name="pic_update">Upload</button><br>
+    </form>
+    <form action="../controller/connect.php" method="post" >
+   
+     First Name: <input type="text" name="F_name" value="<?php echo $_SESSION["Firstname"];?>"> <br>
+     Last Name: <input type="text" name="L_name" value="<?php echo $_SESSION["Lastname"];?>"> <br>
 
- Phone no: <input type="text" maxlength="10" name="phn" value="<?php echo $_SESSION["Phn"];?>"> 
- <button type="submit" name="profile_update">Update</button><br>
- </form>
- <form action="../controller/connect.php" method="post"enctype="multipart/form-data" >
- Profile Photo: <input type="file" name="pic">
- <button type="submit" name="pic_update">Upload</button><br>
- </form>
+     Phone no: <input type="text" maxlength="10" name="phn" value="<?php echo $_SESSION["Phn"];?>"> <br>
+     <button type="submit" name="profile_update">Update</button>
+    </form>
+
  </div>
  
 
