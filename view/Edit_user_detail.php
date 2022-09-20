@@ -15,14 +15,15 @@ if(!isset($_SESSION['Email'])){
 </head>
 <body>
     <div class="login">
-    <form action="../controller/connect.php" method="post"enctype="multipart/form-data" >
-    <h3 class="rg">Update Data</h3>
+    <form action="../controller/connect.php" method="post" enctype="multipart/form-data" >
+        <h3 class="rg">Update Data</h3>
     <img src="<?php echo $_SESSION["img"] ;?>" alt="Please upload img" height='80px' width='80px'><br>
+
     <input type="file" name="pic" style="margin-left:0px;"> <br>
+ 
     <button type="submit" name="pic_update">Upload</button><br>
     </form>
-    <form action="../controller/connect.php" method="post" >
-   
+    <form action="../controller/connect.php" method="post">
      First Name: <input type="text" name="F_name" value="<?php echo $_SESSION["Firstname"];?>"> <br>
      Last Name: <input type="text" name="L_name" value="<?php echo $_SESSION["Lastname"];?>"> <br>
 

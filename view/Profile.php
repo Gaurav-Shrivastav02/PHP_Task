@@ -35,7 +35,7 @@ if(!isset($_SESSION['Email'])){
         </tr>
         <tr>
     
-                <td><button><a href="Edit_user_detail.php" style=" text-decoration:none;">Edit</a></button></td>
+                <td><button><a href="Edit_user_detail.php" style=" text-decoration:none;">Edit Details</a></button></td>
                 <td colspan="2"><button><a href="change_user_password.php" style=" text-decoration:none;">Change Password</a></button></td>
                 <td><button><a href="logout.php" style=" text-decoration:none;">Logout</a></button></td>
 

@@ -86,9 +86,7 @@ if( isset($_POST["profile_update"])){
     $Fn=$_POST['F_name'];
     $ln=$_POST['L_name'];
     $phn=$_POST['phn'];
-
     session_start();
-
     $ins=new model();   
     $res= $ins->update_data($Fn,$ln, $phn,$_SESSION["Email"]);
     $_SESSION["Firstname"] = $res[1];
