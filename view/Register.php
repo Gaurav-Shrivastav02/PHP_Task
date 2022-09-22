@@ -12,8 +12,14 @@ if(isset($_SESSION['Email'])){
     <title>Register User</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
 </head>
 <body class="bg-dark">
 <div class="container">
@@ -32,9 +38,9 @@ if(isset($_SESSION['message'])){
 ?>
 
 
-<form class="text-center border bg-light  p-5 col-6 offset-3 mt-1" action="../controller/connect.php" method="post" enctype="multipart/form-data" style="border-radius:20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;">
+<form class="text-center border bg-light  p-5 col-6 offset-3 mt-1" action="../controller/connect.php" method="post" name="register" enctype="multipart/form-data" style="border-radius:20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;">
 
-<p class="h3 mb-4 bg-info text-white pt-1 pb-1">Register</p>
+<p class="h3 mb-4 bg-info text-white pt-1 pb-1">Register User</p>
 
 <div class="form-row mb-4">
     <div class="col">
@@ -48,26 +54,69 @@ if(isset($_SESSION['message'])){
 </div>
 
 <!-- E-mail -->
-<input type="email" name="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" required>
+<input type="email" name="email" id="defaultRegisterFormEmail" class="form-control " placeholder="E-mail">
 
 <!-- Password -->
-<input type="password" name="pass" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Password" required>
+<input type="password" name="pass" id="pass" class="form-control mt-4" placeholder="Password" >
 
-<input type="password"  name="cpass"id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Confirm Password" required>
+<input type="password"  name="cpass"  id="cpass" class="form-control mt-4" placeholder="Confirm Password" >
 
 <!-- Phone number -->
-<input type="text" name="phn" maxlength="10" id="defaultRegisterPhonePassword" pattern="[0-9]{10}" title="It must be integer and exact 10 digit." class="form-control mb-4" placeholder="Phone number">
+<input type="text" name="phn"  maxlength="10" class="form-control mt-4 " placeholder="Phone number">
 
 <!-- Prodile pic -->
-<input type="file" name="pic" id="defaultRegisterPhonePassword" class="form-control mb-4" >
+<input type="file" name="pic"  class="form-control mt-4" >
 
 <!-- Sign up button -->
-<button class="btn btn-info  btn-block" type="submit" name="submit">Register</button>
+<button class="btn btn-success  px-5 mt-4" type="submit" name="submit">Register</button>
 <p class="mt-4">If you a already registered.<a href="Login.php" class="text-primary h5 p-2">LOGIN</a></p>
 
 </form>
 <!-- Default form register -->
 
+
+<script>
+     $(register).validate({
+        rules: {
+      F_name: "required",
+      email: {
+        required: true,
+        email: true
+      },      
+      phn: {
+        digits: true,
+        minlength: 10,
+        maxlength: 10,
+      },
+      pass: {
+        required: true,
+        minlength: 2,
+      },
+      cpass: {
+        required: true,
+        minlength: 2,
+        equalTo: "#pass",
+      }
+    },
+    messages: {
+      F_name: {
+      required: "Please enter first name",
+     },           
+     phn: {
+      digits: "Please enter valid phone number",
+      minlength: "Phone number field accept only 10 digits",
+      maxlength: "Phone number field accept only 10 digits",
+     },     
+     email: {
+      required: "Please enter email address",
+      email: "Please enter a valid email address.",
+     },
+    },
+  
+
+   
+});
+</script>
  
 </body>
 </html>

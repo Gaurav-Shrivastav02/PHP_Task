@@ -11,8 +11,14 @@ if(!isset($_SESSION['Email'])){
     <title>Edit Detail</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
 </head>
 <body class="bg-dark">
 <div class="container">
@@ -37,7 +43,7 @@ if(isset($_SESSION['message'])){
 <button type="submit" name="pic_update" class="btn btn-danger mt-2 mb-3  ">UPLOAD</button>
 </form>
 
-<form  action="../controller/connect.php" method="post"  >
+<form  action="../controller/connect.php" name="edituser" method="post"  >
 
 <!-- First name -->
 <input type="text"  name="F_name" id="defaultRegisterFormFirstName" class="form-control mt-3 " placeholder="First Name" value="<?php echo $_SESSION["Firstname"];?>">
@@ -46,13 +52,38 @@ if(isset($_SESSION['message'])){
 <input type="text" name="L_name" id="defaultRegisterFormLastName" class="form-control mt-3 " placeholder="Last Name" value="<?php echo $_SESSION["Lastname"];?>">
 
 <!-- Phone number -->
-<input type="text" name="phn" pattern="[0-9]{10}" title="It must be integer and exact 10 digit." maxlength="10"id="defaultRegisterPhonePassword" class="form-control  mt-3 mb-4" placeholder="Phone No" value="<?php echo $_SESSION["Phn"];?>">
+<input type="text" name="phn" pattern="[0-9]{10}" title="It must be integer and exact 10 digit." maxlength="10"id="defaultRegisterPhonePassword" class="form-control  mt-3 " placeholder="Phone No" value="<?php echo $_SESSION["Phn"];?>">
 
 <!-- update button -->
-<button class="btn btn-info  btn-block" type="submit" name="profile_update">Update</button>
+<button class="btn btn-info  btn-block mt-4" type="submit" name="profile_update">Update</button>
 
 </form>
 </div>
+<script>
+     $(edituser).validate({
+        rules: {
+      F_name: "required",      
+      phn: {
+        digits: true,
+        minlength: 10,
+        maxlength: 10,
+      },
+    },
+    messages: {
+      F_name: {
+      required: "Please enter first name",
+     },           
+     phn: {
+      digits: "Please enter valid phone number",
+      minlength: "Phone number field accept only 10 digits",
+      maxlength: "Phone number field accept only 10 digits",
+     },     
+    },
+  
+
+   
+});
+</script>
  
 </body>
 </html>

@@ -123,7 +123,7 @@ if( isset($_POST["profile_update"])){
     }else{
         session_start();
         $_SESSION['message']='User Details Update successfully.';
-        header("location: ../view/Edit_user_detail.php");
+        header("location: ../view/Profile.php");
         
     }
 
@@ -148,7 +148,7 @@ if( isset($_POST["profile_update"])){
     }else{
         session_start();
         $_SESSION['message']='User Image Update successfully.';
-        header("location: ../view/Edit_user_detail.php");
+        header("location: ../view/Profile.php");
         
     }
     } 
@@ -161,7 +161,7 @@ if( isset($_POST["profile_update"])){
 
   if( isset($_POST["Update_pass"])){
     $pass=$_POST['pass'];
-    $cpass=$_POST['pass1'];
+    $cpass=$_POST['cpass'];
     // echo "$pass ";
     session_start();
     $ins=new model();
