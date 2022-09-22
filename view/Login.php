@@ -27,7 +27,7 @@ if(isset($_SESSION['Email'])){
     $mes=$_SESSION['message'];
     echo"  <div class='alert col-6 offset-3 alert-danger alert-dismissible'>
     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-    <strong>Danger!</strong> $mes
+    <strong>$mes</strong> 
   </div>";
     session_unset();
     session_destroy();

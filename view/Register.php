@@ -54,7 +54,7 @@ if(isset($_SESSION['message'])){
 </div>
 
 <!-- E-mail -->
-<input type="email" name="email" id="defaultRegisterFormEmail" class="form-control " placeholder="E-mail">
+<input type="email" name="email" id="defaultRegisterFormEmail" class="form-control " placeholder="E-mail" autocomplete="off">
 
 <!-- Password -->
 <input type="password" name="pass" id="pass" class="form-control mt-4" placeholder="Password" >
@@ -100,15 +100,15 @@ if(isset($_SESSION['message'])){
     },
     messages: {
       F_name: {
-      required: "Please enter first name",
+      required: "Please enter first name.",
      },           
      phn: {
-      digits: "Please enter valid phone number",
-      minlength: "Phone number field accept only 10 digits",
-      maxlength: "Phone number field accept only 10 digits",
+      digits: "Please enter valid phone number.",
+      minlength: "Phone number field accept only 10 digits.",
+      maxlength: "Phone number field accept only 10 digits.",
      },     
      email: {
-      required: "Please enter email address",
+      required: "Please enter email address.",
       email: "Please enter a valid email address.",
      },
     },

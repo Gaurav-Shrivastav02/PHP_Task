@@ -55,7 +55,7 @@ if(isset($_SESSION['message'])){
 <input type="text" name="phn" pattern="[0-9]{10}" title="It must be integer and exact 10 digit." maxlength="10"id="defaultRegisterPhonePassword" class="form-control  mt-3 " placeholder="Phone No" value="<?php echo $_SESSION["Phn"];?>">
 
 <!-- update button -->
-<button class="btn btn-info  btn-block mt-4" type="submit" name="profile_update">Update</button>
+<button class="btn btn-info  px-5 mt-4" type="submit" name="profile_update">Update</button>
 
 </form>
 </div>
